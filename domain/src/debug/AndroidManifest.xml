@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.weekendwars.domain">
+
+    <!-- This permission is required in order to generate the coverage reports into the device external storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!-- Internet permission -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>
