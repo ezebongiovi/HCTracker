@@ -1,4 +1,4 @@
-package com.weekendwars.hc.domain.dto
+package com.weekendwars.domain.dto
 
 data class Book(
     val books: List<String>

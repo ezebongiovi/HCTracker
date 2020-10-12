@@ -1,4 +1,4 @@
-package com.weekendwars.hc.domain.service.impl
+package com.weekendwars.domain.service.impl
 
 import retrofit2.http.GET
 

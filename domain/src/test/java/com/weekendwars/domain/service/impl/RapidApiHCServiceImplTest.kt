@@ -1,6 +1,6 @@
-package com.weekendwars.hc.domain.service.impl
+package com.weekendwars.domain.service.impl
 
-import com.weekendwars.hc.domain.dto.Book
+import com.weekendwars.domain.dto.Book
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.flow.first

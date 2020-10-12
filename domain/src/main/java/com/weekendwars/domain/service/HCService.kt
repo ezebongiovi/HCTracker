@@ -1,6 +1,6 @@
-package com.weekendwars.hc.domain.service
+package com.weekendwars.domain.service
 
-import com.weekendwars.hc.domain.dto.Book
+import com.weekendwars.domain.dto.Book
 import kotlinx.coroutines.flow.Flow
 
 interface HCService {

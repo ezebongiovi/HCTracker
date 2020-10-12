@@ -1,7 +1,7 @@
-package com.weekendwars.hc.domain.service.impl
+package com.weekendwars.domain.service.impl
 
-import com.weekendwars.hc.domain.dto.Book
-import com.weekendwars.hc.domain.service.HCService
+import com.weekendwars.domain.dto.Book
+import com.weekendwars.domain.service.HCService
 import kotlinx.coroutines.flow.flow
 
 class RapidApiHCServiceImpl(private val service: RapidApiHCService) : HCService {

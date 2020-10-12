@@ -1,7 +1,7 @@
-package com.weekendwars.hc.domain.adapter
+package com.weekendwars.domain.adapter
 
-import com.weekendwars.hc.domain.interceptor.HEADER_X_RAPIDAPI_HOST
-import com.weekendwars.hc.domain.interceptor.HEADER_X_RAPIDAPI_KEY
+import com.weekendwars.domain.interceptor.HEADER_X_RAPIDAPI_HOST
+import com.weekendwars.domain.interceptor.HEADER_X_RAPIDAPI_KEY
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After

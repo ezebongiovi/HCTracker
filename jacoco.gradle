@@ -1,13 +1,6 @@
-apply plugin: 'jacoco'
-
 jacoco {
     toolVersion = "0.8.5"
-}
-
-android {
-    jacoco {
-        version = "0.8.5"
-    }
+    reportsDir = file("build/jacocoTestReport")
 }
 
 tasks.withType(Test) {
@@ -17,7 +10,7 @@ tasks.withType(Test) {
 
 // Our merge report task
 
-task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
+task jacocoTestReport(type: JacocoReport, dependsOn: ['app:testDebugUnitTest', 'domain:testDebugUnitTest']) {
 
     reports {
         xml.enabled = true
@@ -25,14 +18,20 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
     }
 
     def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
-    def debugTree = fileTree(dir: "$project.buildDir/tmp/kotlin-classes/debug", excludes: fileFilter)
-    def mainSrc = "$project.projectDir/src/main/kotlin"
+    def mainSrc = [
+            "app/src/main/kotlin",
+            "domain/src/main/kotlin"
+    ]
 
     sourceDirectories.from = files([mainSrc])
-    classDirectories.from = files([debugTree])
-    executionData.from = fileTree(dir: project.buildDir, includes: [
-            '**/*.ec', '**/*.exec'
+    classDirectories.from = files([
+            fileTree(dir: "app/build/tmp/kotlin-classes/debug", excludes: fileFilter),
+            fileTree(dir: "domain/build/tmp/kotlin-classes/debug", excludes: fileFilter)
     ])
+    executionData.from = fileTree(dir: '/', includes: [
+                    '**/*.ec', '**/*.exec'
+            ])
+
 
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
