@@ -26,6 +26,7 @@ class RapidApiHCServiceImplTest {
         )
 
         assertEquals(expectedResult, result)
+        assertEquals("Test2", result[0].books[1])
     }
 
     @Test
@@ -44,5 +45,6 @@ class RapidApiHCServiceImplTest {
         )
 
         assertEquals(expectedResult, result)
+        assertEquals(expectedResult[0].books, result[0].books)
     }
 }

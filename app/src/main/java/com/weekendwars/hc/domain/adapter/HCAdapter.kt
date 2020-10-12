@@ -5,17 +5,15 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class HCAdapter {
+object HCAdapter {
 
-    companion object {
-        private val client: OkHttpClient = OkHttpClient.Builder()
-            .addInterceptor(RapidApiHeadersInterceptor())
-            .build()
+    private val client: OkHttpClient = OkHttpClient.Builder()
+        .addInterceptor(RapidApiHeadersInterceptor())
+        .build()
 
-        val retrofit: Retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://ajith-holy-bible.p.rapidapi.com/")
-            .client(client)
-            .build()
-    }
+    val retrofit: Retrofit = Retrofit.Builder()
+        .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl("https://ajith-holy-bible.p.rapidapi.com/")
+        .client(client)
+        .build()
 }

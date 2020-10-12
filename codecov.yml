@@ -5,6 +5,13 @@ coverage:
   precision: 2
   round: down
   range: "70...100"
+  status:
+    patch:
+      default:
+        # basic
+        target: 95
+        threshold: 0%
+        base: auto
 
 parsers:
   gcov:
@@ -14,9 +21,7 @@ parsers:
       method: no
       macro: no
 ignore:
-  - "app/src/main/java/com/edipasquale/bitrise/App.kt"
-  - "app/src/main/java/com/edipasquale/bitrise/dto/core/Either.kt"
-  - "app/src/main/java/com/edipasquale/bitrise/koin/AppInjector.kt"
+  - ""
 comment:
   layout: "reach,diff,flags,files"
   behavior: default
