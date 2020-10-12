@@ -1,6 +1,6 @@
-package com.weekendwars.domain.adapter
+package com.weekendwars.hc.domain.adapter
 
-import com.weekendwars.domain.interceptor.RapidApiHeadersInterceptor
+import com.weekendwars.hc.domain.interceptor.RapidApiHeadersInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

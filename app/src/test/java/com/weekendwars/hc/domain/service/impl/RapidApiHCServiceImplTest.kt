@@ -1,11 +1,11 @@
-package com.weekendwars.domain.service.impl
+package com.weekendwars.hc.domain.service.impl
 
-import com.weekendwars.domain.dto.Book
+import com.weekendwars.hc.domain.dto.Book
 import io.mockk.coEvery
 import io.mockk.mockk
-import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runBlockingTest
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class RapidApiHCServiceImplTest {

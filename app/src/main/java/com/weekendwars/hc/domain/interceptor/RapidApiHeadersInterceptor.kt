@@ -1,4 +1,4 @@
-package com.weekendwars.domain.interceptor
+package com.weekendwars.hc.domain.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response
