@@ -17,21 +17,32 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['app:testDebugUnitTest', '
         html.enabled = true
     }
 
-    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
-    def mainSrc = [
-            "app/src/main/kotlin",
-            "domain/src/main/kotlin"
+    def fileFilter = [
+            '**/R.class',
+            '**/R$*.class',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+            '**/*Test*.*',
+            'android/**/*.*'
     ]
 
-    sourceDirectories.from = files([mainSrc])
+    sourceDirectories.from = files([
+            "app/src/main/kotlin",
+            "domain/src/main/kotlin"
+    ])
+
     classDirectories.from = files([
             fileTree(dir: "app/build/tmp/kotlin-classes/debug", excludes: fileFilter),
             fileTree(dir: "domain/build/tmp/kotlin-classes/debug", excludes: fileFilter)
     ])
-    executionData.from = fileTree(dir: '/', includes: [
+    executionData.from = [
+            fileTree(dir: 'app/', includes: [
+                    '**/*.ec', '**/*.exec'
+            ]),
+            fileTree(dir: 'domain/', includes: [
                     '**/*.ec', '**/*.exec'
             ])
-
+    ]
 
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
