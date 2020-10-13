@@ -4,8 +4,9 @@ import com.weekendwars.domain.interceptor.HEADER_X_RAPIDAPI_HOST
 import com.weekendwars.domain.interceptor.HEADER_X_RAPIDAPI_KEY
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
+import okhttp3.mockwebserver.SocketPolicy
 import org.junit.After
-import org.junit.Assert.*
+import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
 import retrofit2.Call
