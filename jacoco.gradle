@@ -8,8 +8,6 @@ tasks.withType(Test) {
     jacoco.excludes = ['jdk.internal.*']
 }
 
-// Our merge report task
-
 task jacocoTestReport(type: JacocoReport, dependsOn: ['app:testDebugUnitTest', 'domain:testDebugUnitTest']) {
 
     reports {
