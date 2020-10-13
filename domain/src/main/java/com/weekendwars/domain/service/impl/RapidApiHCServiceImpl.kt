@@ -10,9 +10,9 @@ class RapidApiHCServiceImpl(private val service: RapidApiHCService) : HCService 
      * Fetches from the RapidApi service a list of Books
      */
     override suspend fun getBooks() = flow {
-        emit(service.getBooks().map {
-            Book(it.books.split(",").map {
-                it.trim()
+        emit(service.getBooks().map { apiBook ->
+            Book(apiBook.books.split(",").map { book ->
+                book.trim()
             })
         })
     }

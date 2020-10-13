@@ -3,9 +3,9 @@ package com.weekendwars.domain.service.impl
 import com.weekendwars.domain.dto.Book
 import io.mockk.coEvery
 import io.mockk.mockk
-import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runBlockingTest
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class RapidApiHCServiceImplTest {
@@ -26,6 +26,7 @@ class RapidApiHCServiceImplTest {
         )
 
         assertEquals(expectedResult, result)
+        assertEquals("Test2", result[0].books[1])
     }
 
     @Test
@@ -44,5 +45,6 @@ class RapidApiHCServiceImplTest {
         )
 
         assertEquals(expectedResult, result)
+        assertEquals(expectedResult[0].books, result[0].books)
     }
 }
